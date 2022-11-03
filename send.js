@@ -19,7 +19,7 @@ rcUDP.send(Buffer.from('HELLO'), 0, Buffer.from('HELLO').length, sendPort, sendI
             console.log('UDP message send error', err);
             return;
         } else {
-            console.log('Send message HELLO to ' + sendIP)
+            console.log('Send message HELLO to ' + sendIP + ":" + sendPort)
             rcUDP.close()
         }
     }
