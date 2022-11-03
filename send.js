@@ -11,11 +11,15 @@ let cmdPort = 10003
 
 let rcUDP = dgram.createSocket('udp4');
 
-rcUDP.send(Buffer.from('HELLO'), 0, Buffer.from('HELLO').length, dronePort, pcAddr,
+let sendIP = pcAddr
+let sendPort = dronePort
+rcUDP.send(Buffer.from('HELLO'), 0, Buffer.from('HELLO').length, sendPort, sendIP,
     function (err) {
         if (err) {
             console.log('UDP message send error', err);
             return;
+        } else {
+            console.log('Send message HELLO to ' + sendIP)
         }
     }
 )
