@@ -47,6 +47,6 @@ function udpPortError(error) {
 }
 
 function udpPortData(data) {
-    console.log(data)
+    console.log(data.toString())
 }
 
